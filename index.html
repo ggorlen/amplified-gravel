@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="spellchecker API">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>amplified gravel</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>amplified gravel</h1>
+    </header>
+    <section class="tracks">
+      <ul>
+        <!-- debug idea: fix the selector missing </a> -->
+        <li>
+          <a href="https://upload.wikimedia.org/wikipedia/commons/9/90/De-Wolfgang_Amadeus_Mozart.ogg">mozart</a>
+          <span class="time">00:03</span>
+        </li>
+        <li>
+          <a href="https://upload.wikimedia.org/wikipedia/en/9/9b/Excerpt_of_F%C3%BCnf_geistliche_Lieder_f%C3%BCr_Sopran_und_f%C3%BCnf_Instrumente%2C_Op._15%2C_V._Fahr_hin%2C_o_Seel%2C_zu_deinem_Gott%3B_Anton_Webern%2C_composer%2C_1917%3B_Peter_Rosegger%2C_poet%2C_1900%3B_and_Halina_Lukomska%2C_soprano_and_Pierre_Boulez%2C_conductor%2C_1969.ogg">webern</a>
+          <span class="time">00:27</span>
+        </li>
+        <li>
+          <a href="https://upload.wikimedia.org/wikipedia/en/a/a9/Webern_-_Sehr_langsam.ogg">webern 2</a>
+          <span class="time">00:30</span>
+        </li>
+      </ul>
+    </section>
+    <section class="player">
+      <input class="progress" type="range" value="0" min="0" max="100">
+      <span class="time current-time"></span>/<span class="time duration"></span>
+    </section>
+    <section class="controls">
+      <ul>
+        <li><label><input name="play-all" type="checkbox" checked> continuous ➡️</label></li>
+        <li><label><input name="repeat" type="checkbox"> repeat 🔁</label></li>
+        <!--<li><label><input type="checkbox">shuffle 🔀</label></li>
+        <li>
+          <button>🔀 shuffle</button>
+        </li>-->
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>
+          <button>💾 download all</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

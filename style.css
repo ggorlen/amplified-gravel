@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+}
+body {
+  margin: 0;
+  padding: 1em;
+  background: #000 url(wallpaper.png);
+  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  color: #fff;
+}
+section {
+  padding-top: 0.7em;
+}
+h1 {
+  cursor: default;
+  color: #ccc;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.player {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.player .time {
+  font-size: 0.8em;
+}
+.tracks ul {
+  display: inline-block;
+  cursor: grab;
+}
+.tracks li {
+  margin-top: 0.3em;
+}
+.tracks li a {
+  color: #f07;
+  text-decoration: none;
+  padding: 0.3em;
+}
+.tracks li a:hover {
+  background: #f07;
+  color: white;
+}
+.tracks li a::before {
+  content: "▶️ ";
+}
+.tracks li a.playing::before{
+  content: "⏸️ ";
+}
+.tracks li span.time {
+  margin-left: 1em;
+  font-size: 0.8em;
+}
+.controls {
+  display: none;
+}
+.controls li {
+  padding-top: 0.5em;
+}
+button {
+  padding: 0.7em;
+  background: #111;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+}
+button:hover {
+  background: #151515;
+}
+
+@media (min-width: 600px) {
+}
+
