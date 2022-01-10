@@ -1,21 +1,18 @@
-// TODO
-// seek control show loaded amount
-// show buffering
-// volume control / mute?
-// handle scrolling https://stackoverflow.com/questions/12314345/custom-progress-bar-for-audio-and-progress-html5-elements/70638608#
-// style seek progress https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider
-// prefetch audio
-// shuffle
-// show errors
-// save tracklist to localhost and offer reset btn
-// albums that can be played in chunks
-// download all or dl selected (https://stackoverflow.com/questions/8608724/how-to-zip-files-using-javascript ?)
-
+const currentTimeEl = document.querySelector(".current-time");
+const durationEl = document.querySelector(".duration");
 const progressEl = document.querySelector(".progress");
+let mouseDownOnProgressEl = false;
 progressEl.addEventListener("change", event => {
   const pct = event.target.value / 100;
   audio.currentTime = (audio.duration || 0) * pct;
 });
+progressEl.addEventListener("mousedown", () => {
+  mouseDownOnProgressEl = true;
+});
+progressEl.addEventListener("mouseup", () => {
+  mouseDownOnProgressEl = false;
+});
+
 const playAllEl = document.querySelector('input[name="play-all"]');
 let playAll = playAllEl.checked;
 playAllEl.addEventListener("click", event => {
@@ -38,27 +35,30 @@ const play = () => {
   audio.play();
 };
 
+const padTime = n => (~~(n) + "").padStart(2, "0");
 const fmtTime = s =>
-  s < 1 ? "00:00" :
-  `${(~~(s / 60) + "").padStart(2)}:${(~~(s % 60) + "").padStart(2)}`
+  s < 1 ? "00:00" : `${padTime(s / 60)}:${padTime(s % 60)}`
 ;
 
 audio.addEventListener("loadeddata", event => {
   progressEl.value = 0;
-  document.querySelector(".current-time").textContent = fmtTime(audio.currentTime);
-  document.querySelector(".duration").textContent = fmtTime(audio.duration);
-  // TODO hide buffering spinner
+  currentTimeEl.textContent = fmtTime(audio.currentTime);
+  durationEl.textContent = fmtTime(audio.duration);
+  // TODO hide buffering spinner here
 });
 audio.addEventListener("timeupdate", event => {
-  document.querySelector(".current-time").textContent = fmtTime(audio.currentTime);
-  document.querySelector(".duration").textContent = fmtTime(audio.duration);
-  progressEl.value = audio.currentTime / audio.duration * 100;
+  currentTimeEl.innerText = fmtTime(audio.currentTime);
+  durationEl.innerText = fmtTime(audio.duration);
+
+  if (!mouseDownOnProgressEl) {
+    progressEl.value = audio.currentTime / audio.duration * 100;
+  }
 });
 audio.addEventListener("error", event => {
   console.error("something went wrong"); // TODO
 });
 audio.addEventListener("play", e => {
-  // TODO show buffering spinner
+  // TODO show buffering spinner here
   if (audio.currentTime < 1) { // FIXME Meh
     progressEl.value = 0;
   }
