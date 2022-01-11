@@ -54,7 +54,7 @@ ul {
   margin-left: 1em;
   font-size: 0.8em;
 }
-.controls {
+.player, .controls {
   display: none;
 }
 .controls li {

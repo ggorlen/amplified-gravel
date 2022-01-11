@@ -1,6 +1,7 @@
 const currentTimeEl = document.querySelector(".current-time");
 const durationEl = document.querySelector(".duration");
 const progressEl = document.querySelector(".progress");
+progressEl.style.display = "block";
 let mouseDownOnProgressEl = false;
 progressEl.addEventListener("change", event => {
   const pct = event.target.value / 100;
