@@ -78,13 +78,17 @@ audio.addEventListener("ended", e => {
   tracks[currentTrack].classList.remove("playing", "paused");
 
   if (playAll) {
-    currentTrack = ++currentTrack % tracks.length;
+    currentTrack = ++currentTrack;
 
     if (currentTrack >= tracks.length) {
-      currentTrack = 0;
-    }
+      currentTrack = tracks.length - 1;
 
-    if (repeat || currentTrack !== 0) {
+      if (repeat) {
+        currentTrack = 0;
+        play();
+      }
+    }
+    else if (currentTrack !== 0) {
       play();
     }
   }
@@ -103,6 +107,7 @@ tracks.forEach(track => {
     }
     else {
       currentTrack = tracks.findIndex(e => e.href === track.href);
+    console.log(currentTrack)
       play();
     }
   });

@@ -14,11 +14,15 @@ section {
 }
 h1 {
   cursor: default;
-  color: #ccc;
+  color: #eee;
+  font-weight: 300;
 }
 ul {
   list-style-type: none;
   padding: 0;
+}
+.emoji {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
 }
 .player {
   display: flex;
@@ -45,10 +49,15 @@ ul {
   color: white;
 }
 .tracks li a::before {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
   content: "▶️ ";
 }
-.tracks li a.playing::before{
+.tracks li a.playing::before {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
   content: "⏸️ ";
+}
+.tracks li a.playing {
+  background: #0f0;
 }
 .tracks li span.time {
   margin-left: 1em;

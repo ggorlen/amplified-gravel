@@ -6,6 +6,7 @@ WIP page to play sounds
 
 - seek control should show loaded amount and/or a buffering animation
 - prefetch audio (requires a second Audio element)
+- keyboard controls for play/pause/next/prev
 - shuffle
 - show errors
 - save tracklist to localhost and offer reset btn
