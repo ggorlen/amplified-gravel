@@ -4,6 +4,8 @@ WIP page to play sounds
 
 ### TODO
 
+- extra play/pause and current track info near progress range
+- use JS to load track durations to DOM
 - seek control should show loaded amount and/or a buffering animation
 - prefetch audio (requires a second Audio element)
 - keyboard controls for play/pause/next/prev

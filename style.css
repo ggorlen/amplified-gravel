@@ -7,12 +7,14 @@ body {
   padding: 1em;
   background: #000 url(wallpaper.png);
   font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
-  color: #fff;
+  font-size: 0.9em;
+  color: #eee;
 }
 section {
   padding-top: 0.7em;
 }
 h1 {
+  font-size: 1.2em;
   cursor: default;
   color: #eee;
   font-weight: 300;
@@ -56,12 +58,23 @@ ul {
   font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
   content: "⏸️ ";
 }
+.tracks li a.paused {
+  background: #00f;
+}
 .tracks li a.playing {
   background: #0f0;
 }
 .tracks li span.time {
   margin-left: 1em;
   font-size: 0.8em;
+}
+.player {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.player > *:not(:last-child) {
+  margin-right: 1em;
 }
 .player, .controls {
   display: none;
@@ -72,7 +85,7 @@ ul {
 button {
   padding: 0.7em;
   background: #111;
-  color: #fff;
+  color: #eee;
   border: 0;
   border-radius: 5px;
   cursor: pointer;

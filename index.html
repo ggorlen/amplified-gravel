@@ -15,6 +15,12 @@
     <header>
       <h1>amplified gravel</h1>
     </header>
+    <section class="player">
+      <input class="progress" type="range" value="0" min="0" max="100">
+      <div>
+        <span class="time current-time"></span>/<span class="time duration"></span>
+      </div>
+    </section>
     <section class="tracks">
       <ul>
         <li>
@@ -31,14 +37,20 @@
         </li>
       </ul>
     </section>
-    <section class="player">
-      <input class="progress" type="range" value="0" min="0" max="100">
-      <span class="time current-time"></span>/<span class="time duration"></span>
-    </section>
     <section class="controls">
       <ul>
-        <li><label><input name="play-all" type="checkbox" checked> continuous <span class="emoji">➡️</span></label></li>
-        <li><label><input name="repeat" type="checkbox"> repeat <span class="emoji">🔁</span></label></li>
+        <li>
+          <label>
+            <input name="play-all" type="checkbox" checked>
+            continuous <span class="emoji">➡️</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input name="repeat" type="checkbox">
+            repeat <span class="emoji">🔁</span>
+          </label>
+        </li>
         <!--<li><label><input type="checkbox">shuffle 🔀</label></li>
         <li>
           <button>🔀 shuffle</button>
@@ -48,9 +60,7 @@
     <section>
       <ul>
         <li>
-        <!--
           Download audio on <a href="https://www.github.com/ggorlen/amplified-gravel">GitHub</a>
-        -->
         <!--
           <button><span class="emoji">💾</span> download all</button>
         -->

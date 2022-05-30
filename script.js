@@ -1,7 +1,8 @@
 const currentTimeEl = document.querySelector(".current-time");
 const durationEl = document.querySelector(".duration");
 const progressEl = document.querySelector(".progress");
-progressEl.style.display = "block";
+const playerEl = document.querySelector(".player");
+playerEl.style.display = "flex";
 let mouseDownOnProgressEl = false;
 progressEl.addEventListener("change", event => {
   const pct = event.target.value / 100;
@@ -29,6 +30,7 @@ const controlsEl = document.querySelector(".controls");
 controlsEl.style.display = "block";
 const tracks = [...document.querySelectorAll("a[href$=ogg]")];
 let currentTrack = 0;
+tracks[currentTrack].classList.add("paused");
 audio.src = tracks[currentTrack].href;
 
 const play = () => {
