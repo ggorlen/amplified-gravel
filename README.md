@@ -5,6 +5,7 @@ WIP page to play sounds
 ### TODO
 
 - use single push icons for continuous/repeat play rather than checkboxes
+- when last track ends and there's no repeat, queue up first track
 - make emojis into CSS icons
 - keyboard controls for play/pause/next/prev
 - use JS to load track durations to DOM

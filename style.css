@@ -7,7 +7,6 @@ body {
   padding: 1em;
   background: #000 url(wallpaper.png);
   font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
-  font-size: 0.9em;
   color: #eee;
 }
 section {
@@ -38,8 +37,8 @@ ul {
   display: inline-block;
 }
 .tracks li {
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
 }
 .tracks li a {
   color: #fff;
@@ -82,17 +81,31 @@ ul {
 .player, .controls {
   display: none;
 }
+.controls ul {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
 .controls li {
-  padding-top: 0.5em;
+  padding-right: 0.8em;
+}
+.controls li label {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+}
+button, input {
+  font-family: inherit;
+  font-size: inherit;
 }
 button {
-  padding: 0.7em;
+  padding: 0.3em;
   background: #333;
   color: #eee;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
-  font-family: inherit;
+  font-size: 1.3em;
 }
 button:hover {
   background: #222;
