@@ -2,6 +2,7 @@ const currentTimeEl = document.querySelector(".current-time");
 const durationEl = document.querySelector(".duration");
 const progressEl = document.querySelector(".progress");
 const playerEl = document.querySelector(".player");
+document.querySelector(".tracks ul").style.cursor = "grab";
 playerEl.style.display = "flex";
 let mouseDownOnProgressEl = false;
 progressEl.addEventListener("change", event => {
@@ -28,6 +29,10 @@ repeatEl.addEventListener("click", event => {
 const audio = document.createElement("audio");
 const controlsEl = document.querySelector(".controls");
 controlsEl.style.display = "block";
+const mainPlayEl = document.querySelector(".main-play-pause");
+mainPlayEl.addEventListener("click", event => {
+  audio[audio.paused ? "play" : "pause"]();
+});
 const tracks = [...document.querySelectorAll("a[href$=ogg]")];
 let currentTrack = 0;
 tracks[currentTrack].classList.add("paused");
@@ -68,13 +73,16 @@ audio.addEventListener("play", e => {
 
   tracks.forEach(e => e.classList.remove("playing", "paused"));
   tracks[currentTrack].classList.add("playing");
+  mainPlayEl.textContent = "⏸️";
 });
 audio.addEventListener("pause", e => {
   tracks.forEach(e => e.classList.remove("playing", "paused"));
   tracks[currentTrack].classList.add("paused");
+  mainPlayEl.textContent = "▶️";
 });
 audio.addEventListener("stop", e => {
   tracks.forEach(e => e.classList.remove("playing", "paused"));
+  mainPlayEl.textContent = "▶️";
 });
 audio.addEventListener("ended", e => {
   tracks[currentTrack].classList.remove("playing", "paused");
@@ -109,13 +117,12 @@ tracks.forEach(track => {
     }
     else {
       currentTrack = tracks.findIndex(e => e.href === track.href);
-    console.log(currentTrack)
       play();
     }
   });
 });
 
-const sortable = new Sortable(document.querySelector("section ul"), {
+const sortable = new Sortable(document.querySelector(".tracks ul"), {
   animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
   easing: "cubic-bezier(1, 0, 0, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
 

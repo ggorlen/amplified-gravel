@@ -16,10 +16,31 @@
       <h1>amplified gravel</h1>
     </header>
     <section class="player">
+      <button class="main-play-pause emoji">▶️</button>
       <input class="progress" type="range" value="0" min="0" max="100">
       <div>
         <span class="time current-time"></span>/<span class="time duration"></span>
       </div>
+    </section>
+    <section class="controls">
+      <ul>
+        <li>
+          <label>
+            <input name="play-all" type="checkbox" checked>
+            <span title="continuous play" class="emoji">➡️</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input name="repeat" type="checkbox">
+            <span title="repeat play" class="emoji">🔁</span>
+          </label>
+        </li>
+        <!--<li><label><input type="checkbox">shuffle 🔀</label></li>
+        <li>
+          <button>🔀 shuffle</button>
+        </li>-->
+      </ul>
     </section>
     <section class="tracks">
       <ul>
@@ -29,39 +50,19 @@
         </li>
         <li>
           <a href="https://upload.wikimedia.org/wikipedia/en/9/9b/Excerpt_of_F%C3%BCnf_geistliche_Lieder_f%C3%BCr_Sopran_und_f%C3%BCnf_Instrumente%2C_Op._15%2C_V._Fahr_hin%2C_o_Seel%2C_zu_deinem_Gott%3B_Anton_Webern%2C_composer%2C_1917%3B_Peter_Rosegger%2C_poet%2C_1900%3B_and_Halina_Lukomska%2C_soprano_and_Pierre_Boulez%2C_conductor%2C_1969.ogg">webern</a>
-          <span class="time">00:27</span>
+          <span class="time">00:26</span>
         </li>
         <li>
           <a href="https://upload.wikimedia.org/wikipedia/en/a/a9/Webern_-_Sehr_langsam.ogg">webern 2</a>
-          <span class="time">00:30</span>
+          <span class="time">00:29</span>
         </li>
-      </ul>
-    </section>
-    <section class="controls">
-      <ul>
-        <li>
-          <label>
-            <input name="play-all" type="checkbox" checked>
-            continuous <span class="emoji">➡️</span>
-          </label>
-        </li>
-        <li>
-          <label>
-            <input name="repeat" type="checkbox">
-            repeat <span class="emoji">🔁</span>
-          </label>
-        </li>
-        <!--<li><label><input type="checkbox">shuffle 🔀</label></li>
-        <li>
-          <button>🔀 shuffle</button>
-        </li>-->
       </ul>
     </section>
     <section>
       <ul>
+        <!--
         <li>
           Download audio on <a href="https://www.github.com/ggorlen/amplified-gravel">GitHub</a>
-        <!--
           <button><span class="emoji">💾</span> download all</button>
         -->
         </li>

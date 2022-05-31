@@ -36,7 +36,6 @@ ul {
 }
 .tracks ul {
   display: inline-block;
-  cursor: grab;
 }
 .tracks li {
   margin-top: 0.3em;
@@ -44,22 +43,14 @@ ul {
 .tracks li a {
   color: #f07;
   text-decoration: none;
-  padding: 0.3em;
+  padding: 0.2em;
 }
 .tracks li a:hover {
   background: #f07;
   color: white;
 }
-.tracks li a::before {
-  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
-  content: "▶️ ";
-}
-.tracks li a.playing::before {
-  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
-  content: "⏸️ ";
-}
 .tracks li a.paused {
-  background: #00f;
+  background: #ff0;
 }
 .tracks li a.playing {
   background: #0f0;
@@ -84,7 +75,7 @@ ul {
 }
 button {
   padding: 0.7em;
-  background: #111;
+  background: #333;
   color: #eee;
   border: 0;
   border-radius: 5px;
@@ -92,7 +83,7 @@ button {
   font-family: inherit;
 }
 button:hover {
-  background: #151515;
+  background: #222;
 }
 
 @media (min-width: 600px) {
