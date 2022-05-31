@@ -39,25 +39,37 @@ ul {
 }
 .tracks li {
   margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 .tracks li a {
-  color: #f07;
-  text-decoration: none;
-  padding: 0.2em;
+  color: #fff;
+  background: #000;
+  padding: 0.3em;
 }
 .tracks li a:hover {
-  background: #f07;
-  color: white;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+.tracks li a.paused:hover,
+.tracks li a.playing:hover {
+  color: #000;
+  text-decoration: none;
 }
 .tracks li a.paused {
   background: #ff0;
+  color: #000;
+  text-decoration: none;
 }
 .tracks li a.playing {
   background: #0f0;
+  color: #000;
+  text-decoration: none;
 }
 .tracks li span.time {
   margin-left: 1em;
   font-size: 0.8em;
+  color: #ccc;
 }
 .player {
   display: flex;

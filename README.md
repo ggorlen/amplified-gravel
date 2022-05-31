@@ -4,6 +4,8 @@ WIP page to play sounds
 
 ### TODO
 
+- use single push icons for continuous/repeat play rather than checkboxes
+- make emojis into CSS icons
 - keyboard controls for play/pause/next/prev
 - use JS to load track durations to DOM
 - seek control should show loaded amount and/or a buffering animation

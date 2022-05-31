@@ -2,7 +2,6 @@ const currentTimeEl = document.querySelector(".current-time");
 const durationEl = document.querySelector(".duration");
 const progressEl = document.querySelector(".progress");
 const playerEl = document.querySelector(".player");
-document.querySelector(".tracks ul").style.cursor = "grab";
 playerEl.style.display = "flex";
 let mouseDownOnProgressEl = false;
 progressEl.addEventListener("change", event => {
@@ -122,15 +121,18 @@ tracks.forEach(track => {
   });
 });
 
-const sortable = new Sortable(document.querySelector(".tracks ul"), {
-  animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
-  easing: "cubic-bezier(1, 0, 0, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
-
-  // Called by any change to the list (add / update / remove)
-  onSort: evt => {
-    const {newIndex, oldIndex} = evt;
-    tracks.splice(newIndex, 0, tracks.splice(oldIndex, 1)[0]);
-    currentTrack = tracks.findIndex(e => e.href === audio.src);
-  },
-});
+if (Sortable) {
+  document.querySelector(".tracks ul").style.cursor = "grab";
+  const sortable = new Sortable(document.querySelector(".tracks ul"), {
+    animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
+    easing: "cubic-bezier(1, 0, 0, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
+  
+    // Called by any change to the list (add / update / remove)
+    onSort: evt => {
+      const {newIndex, oldIndex} = evt;
+      tracks.splice(newIndex, 0, tracks.splice(oldIndex, 1)[0]);
+      currentTrack = tracks.findIndex(e => e.href === audio.src);
+    },
+  });
+}
 
